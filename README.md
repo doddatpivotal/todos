@@ -6,6 +6,8 @@ Simply put its a uService app build in [Spring Boot](http://spring.io/projects/s
 
 --img--
 
+![alt text](https://github.com/adamzwickey/todos/blob/master/images/app.png "Screenshot")
+
 ## Playground
 
 ### [__todos-edge__](/todos-edge)
@@ -23,5 +25,17 @@ A sample frontend [Vue.js](https://vuejs.org/) app wrapped in [Spring Boot](http
 ### [__todos-api__](/todos-api)
 
 A sample [Spring Boot](https://spring.io/projects/spring-boot) service that uses spring-boot-starter-web to implement a Spring MVC based REST API for Todo(s)
+
+---
+
+### [__todos-redis__](/todos-redis)
+
+A sample [Spring Boot](https://spring.io/projects/spring-boot) service that uses JPA and Spring Data Redis to cache data.
+
+---
+
+### [__todos-mysql__](/todos-mysql)
+
+A sample [Spring Boot](https://spring.io/projects/spring-boot) service that that provides data persistence in a MySQL DB using JPA.
 
 ---
