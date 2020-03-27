@@ -10,7 +10,7 @@ Simply put its a playground for all things [Spring Boot](http://spring.io/projec
 
 ### [__todos-edge__](/todos-edge)
 
-Todo(s) Edge is an edge for other Todo apps and serves as a client entry-point into functionality, implemented using [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway).
+Todo(s) Edge is an edge for other Todo apps and serves as a client entry-point into functionality.
 
 ---
 
