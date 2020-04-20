@@ -20,7 +20,7 @@ metadata:
   name: todos-redis-ingress
 spec:
   rules:
-    - host: todos-redis.workshop.pks.lab.winterfell.live
+    - host: todos-redis.{{ .Values.ingressUrl }}
       http:
         paths:
           - backend:
@@ -43,7 +43,7 @@ spec:
         app: todos-redis
     spec:
       containers:
-        - image: harbor.lab.winterfell.live/workshop-alana/todos-redis:latest
+        - image: {{ .Values.imageRepository }}/todos-redis:latest
           name: todos-redis
           ports:
             - containerPort: 8888

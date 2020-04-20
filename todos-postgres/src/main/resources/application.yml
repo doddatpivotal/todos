@@ -1,13 +1,23 @@
 spring:
   application:
-    name: todos-mysql
+    name: todos-postgres
   datasource:
-    url: jdbc:mysql://localhost/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:postgres://localhost/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  hikari:
+    connectionTimeout: 20000
+    maximumPoolSize: 5
   jpa:
     hibernate:
       ddl-auto: update
-    database: mysql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
 management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
   metrics:
     export:
       wavefront:

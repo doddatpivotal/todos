@@ -2,6 +2,10 @@ spring:
   application:
     name: todos-redis
 management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
   metrics:
     export:
       wavefront:

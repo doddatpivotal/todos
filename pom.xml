@@ -28,7 +28,7 @@
         <module>todos-edge</module>
         <module>todos-webui</module>
         <module>todos-api</module>
-        <module>todos-mysql</module>
+        <module>todos-postgres</module>
         <module>todos-redis</module>
     </modules>
 
