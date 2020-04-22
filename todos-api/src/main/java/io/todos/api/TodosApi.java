@@ -13,9 +13,4 @@ public class TodosApi {
 
     }
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-
-    }
 }
