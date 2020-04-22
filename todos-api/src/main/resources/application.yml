@@ -8,18 +8,10 @@ management:
   metrics:
     export:
       wavefront:
-
-        uri: https://vmware.wavefront.com
-        apiToken: <TOKEN>
         step: PT10S
-
         reporting:
-          #duration=(reporting duration, intervals between spring micrometer reporting)
           traces: true
 
-        application:
-          name: Todos Application
-          service: ${spring.application.name}
   endpoints:
     web:
       exposure:
@@ -27,3 +19,7 @@ management:
 
 server:
   port: 8081
+
+wavefront:
+  application:
+    service: ${spring.application.name}

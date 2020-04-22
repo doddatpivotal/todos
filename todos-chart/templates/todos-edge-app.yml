@@ -40,10 +40,9 @@ spec:
           value: "http://todos-api:8081"
         - name: TODOS_UI_ENDPOINT
           value: "http://todos-webui:8080"
-        - name: SPRING_CLOUD_KUBERNETES_SECRETS_ENABLE_API
-          value: "true"
-        - name: SPRING_CLOUD_KUBERNETES_SECRETS_LABELS_SCOPE
-          value: "todos-all"
+        envFrom:
+          - secretRef:
+              name: wavefront
         readinessProbe:
           httpGet:
             path: /actuator/health
