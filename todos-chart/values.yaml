@@ -9,4 +9,6 @@ wavefront:
   uri: ""
   application:
     name: ""
-
+imageRepository: ""
+ingressUrl: ""
+namespace: ""

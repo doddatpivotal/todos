@@ -45,6 +45,13 @@ spec:
       containers:
         - image: {{ .Values.imageRepository }}/todos-redis:latest
           name: todos-redis
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "150m"
+            limits:
+              memory: "250Mi"
+              cpu: "500m"
           ports:
             - containerPort: 8888
               protocol: TCP

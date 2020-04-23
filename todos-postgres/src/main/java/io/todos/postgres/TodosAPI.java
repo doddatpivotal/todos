@@ -29,6 +29,13 @@ public class TodosAPI {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/")
     public Todo create(@RequestBody Todo todo) {
+        if(todo.getTitle().toLowerCase().contains("m")) {
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         Todo obj = new Todo();
         if(ObjectUtils.isEmpty(todo.getId())) {
             obj.setId(UUID.randomUUID().toString());

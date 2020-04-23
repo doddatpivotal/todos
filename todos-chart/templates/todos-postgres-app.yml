@@ -45,6 +45,13 @@ spec:
       containers:
         - image: {{ .Values.imageRepository }}/todos-postgres:latest
           name: todos-postgres
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "150m"
+            limits:
+              memory: "250Mi"
+              cpu: "500m"
           ports:
             - containerPort: 9090
               protocol: TCP
@@ -53,10 +60,11 @@ spec:
                 name: wavefront
             - configMapRef:
                 name: todos-postgres
-          readinessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 9090
+# Intentionally commented out readiness probe for lab exercise
+#          readinessProbe:
+#            httpGet:
+#              path: /actuator/health
+#              port: 9090
 ---
 kind: ConfigMap
 apiVersion: v1
@@ -65,4 +73,4 @@ metadata:
 data:
   SPRING_DATASOURCE_URL: jdbc:postgresql://my-postgres-postgresql:5432/postgres
   SPRING_DATASOURCE_USERNAME: postgres
-  SPRING_DATASOURCE_PASSWORD: topsecret
+  SPRING_DATASOURCE_PASSWORD: topsecret2 # Intentionally bad password for lab exercise

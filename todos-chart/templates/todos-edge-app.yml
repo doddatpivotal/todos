@@ -28,10 +28,18 @@ spec:
       name: todos-edge
       labels:
         app: todos-edge
+        networking/allow-internet-access: "true"
     spec:
       containers:
       - image: {{ .Values.imageRepository }}/todos-edge:latest
         name: todos-edge
+        resources:
+          requests:
+            memory: "250Mi"
+            cpu: "150m"
+          limits:
+            memory: "250Mi"
+              cpu: "500m"
         ports:
         - containerPort: 9999
           protocol: TCP

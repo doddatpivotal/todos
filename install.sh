@@ -3,6 +3,7 @@
 : ${WAVEFRONT_APPLICATION_NAME?"Need to set WAVEFRONT_APPLICATION_NAME environment variable"}
 : ${IMAGE_REPOSITORY?"Need to set IMAGE_REPOSITORY environment variable"}
 : ${INGRESS_URL?"Need to set INGRESS_URL environment variable"}
+: ${NAMESPACE?"Need to set NAMESPACE environment variable"}
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install my-postgres bitnami/postgresql --set postgresqlPassword=topsecret --set service.type=LoadBalancer
@@ -12,4 +13,5 @@ helm install todos ./todos-chart \
     --set wavefront.uri=$WAVEFRONT_URI \
     --set wavefront.application.name="$WAVEFRONT_APPLICATION_NAME" \
     --set imageRepository=$IMAGE_REPOSITORY \
-    --set ingressUrl=$INGRESS_URL
+    --set ingressUrl=$INGRESS_URL \
+    --set namespace=$NAMESPACE
