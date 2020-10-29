@@ -1,4 +1,4 @@
-mvn clean install -DskipTests
+./mvn clean install -DskipTests
 
 # WARNING: Update the two values below to your specific use case
 export LOCAL_NAME=dpfeffer
