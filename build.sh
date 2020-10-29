@@ -1,8 +1,8 @@
-./mvn clean install -DskipTests
+./mvnw clean install -DskipTests
 
 # WARNING: Update the two values below to your specific use case
 export LOCAL_NAME=dpfeffer
-export HARBOR_PROJECT=harbor.lab.winterfell.live/workshop-alana
+export HARBOR_PROJECT=harbor.stormsend.tkg-vsphere-haas-261.winterfell.live/todos
 
 docker build -t $LOCAL_NAME/todos-edge todos-edge/
 docker tag $LOCAL_NAME/todos-edge $HARBOR_PROJECT/todos-edge:latest
